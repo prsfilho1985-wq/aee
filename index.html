@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEE - Associação Esportiva Expansivo | Futsal Feminino Natal/RN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-fundo: #000000; /* Preto Oficial */
+            --cor-marca: #FF6600; /* Laranja Oficial (Energia) */
+            --cor-texto-claro: #ffffff;
+            --cor-cinza-deep: #1a1a1a;
+            --cor-cinza-texto: #cccccc;
+        }
+
+        body { font-family: 'Open Sans', sans-serif; margin: 0; color: var(--cor-texto-claro); background-color: var(--cor-fundo); }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+
+        /* Navegação */
+        nav { background: var(--cor-fundo); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--cor-marca); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--cor-marca); }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--cor-marca); }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1350&q=80'); 
+                background-size: cover; background-position: center; height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; border-bottom: 5px solid var(--cor-marca); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; color: var(--cor-marca); }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin-bottom: 35px; color: white; }
+
+        /* Seção Transparência (Foco do Auditor) */
+        .transparencia { background: var(--cor-cinza-deep); padding: 80px 5%; text-align: center; }
+        .docs-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
+        .doc-item { padding: 30px; border: 2px solid var(--cor-marca); border-radius: 12px; width: 220px; transition: 0.4s; background: transparent; }
+        .doc-item:hover { background: var(--cor-marca); color: var(--cor-fundo); transform: translateY(-5px); }
+        .doc-item strong { font-size: 1.1rem; }
+
+        /* Metodologia e Missão */
+        .impacto { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; background: var(--cor-fundo); }
+        .card-impacto { background: var(--cor-cinza-deep); padding: 40px; border-radius: 15px; border-left: 6px solid var(--cor-marca); }
+        .card-impacto h3 { color: var(--cor-marca); margin-bottom: 15px; }
+        .card-impacto p { color: var(--cor-cinza-texto); line-height: 1.8; }
+
+        /* Botão Chamada para Ação */
+        .btn { background: var(--cor-marca); color: var(--cor-fundo); padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn:hover { background: white; color: var(--cor-fundo); }
+
+        /* Rodapé Profissional */
+        footer { background: #000; padding: 50px 5%; text-align: center; border-top: 1px solid #333; }
+        .footer-info { color: var(--cor-marca); font-weight: bold; margin-bottom: 10px; }
+        .footer-legal { font-size: 0.8rem; color: #666; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">AEE <span style="color:white">EXPANSIVO</span></div>
+    <div class="nav-links">
+        <a href="#sobre">A Associação</a>
+        <a href="#transparencia">Transparência</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>EXPANSIVO FUTSAL FEMININO</h1>
+    <p>Excelência técnica, ética e compromisso social na formação de atletas em Natal/RN.</p>
+    <a href="#transparencia" class="btn">Portal de Governança</a>
+</section>
+
+<section id="transparencia" class="transparencia">
+    <h2 style="color: var(--cor-marca)">Gestão e Compliance</h2>
+    <p>Transparência total na aplicação de recursos públicos e privados. Auditado por especialistas.</p>
+    <div class="docs-grid">
+        <div class="doc-item">
+            <strong>Estatuto Social</strong><br><small>Sede Rua Jaguaruana</small>
+        </div>
+        <div class="doc-item">
+            <strong>Atas Oficiais</strong><br><small>Diretoria 2026</small>
+        </div>
+        <div class="doc-item">
+            <strong>Regularidade Fiscal</strong><br><small>Certidões Negativas</small>
+        </div>
+    </div>
+</section>
+
+<section id="sobre" class="impacto">
+    <div class="card-impacto">
+        <h3>Propósito Social</h3>
+        <p>Promover a igualdade de gênero através do futsal, garantindo às meninas de Natal um ambiente seguro para o desenvolvimento físico e cidadão.</p>
+    </div>
+    <div class="card-impacto">
+        <h3>Localização Estratégica</h3>
+        <p>Instalada no Bairro Potengi (Zona Norte), a AEE é o polo de referência para o desporto feminino na região.</p>
+    </div>
+    <div class="card-impacto">
+        <h3>Metodologia AEE</h3>
+        <p>Treinos estruturados com monitorização escolar. O desporto como trampolim para a educação formal e liderança.</p>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-info">ASSOCIAÇÃO ESPORTIVA EXPANSIVO - AEE</div>
+    <p style="color: #888">Natal - Rio Grande do Norte | Rua Jaguaruana, 2310</p>
+    <div class="footer-legal">
+        &copy; 2026 | Gestão Fiscal e Contabilidade Especializada: Hub de Projetos Sociais.
+    </div>
+</footer>
+
+</body>
+</html>
