@@ -94,6 +94,9 @@
         /* Rodapé Profissional com Contato */
         footer { background: #000; padding: 50px 5%; text-align: center; border-top: 1px solid #333; }
         .footer-info { color: var(--cor-marca); font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
+        .footer-address { margin: 10px 0; }
+        .footer-address a { color: #888; text-decoration: none; transition: 0.3s; }
+        .footer-address a:hover { color: var(--cor-marca); text-decoration: underline; }
         .footer-contact { margin: 15px 0; color: #ccc; }
         .footer-contact a { color: var(--cor-marca); text-decoration: none; font-weight: 600; transition: 0.3s; }
         .footer-contact a:hover { text-decoration: underline; color: #fff; }
@@ -152,7 +155,7 @@
     </div>
     <div class="card-impacto">
         <h3>Localização Estratégica</h3>
-        <p>Instalada no Bairro Potengi (Zona Norte), a AEE é o polo de referência para o desporto feminino na região.</p>
+        <p>Instalada no Bairro Pajuçara (Zona Norte), a AEE é o polo de referência para o desporto feminino na região.</p>
     </div>
     <div class="card-impacto">
         <h3>Metodologia AEE</h3>
@@ -176,11 +179,18 @@
     </div>
 </section>
 
-<!-- Rodapé com o ID de Contato -->
+<!-- Rodapé com o ID de Contato e Link do Endereço -->
 <footer id="contato">
     <div class="footer-info">ASSOCIAÇÃO ESPORTIVA EXPANSIVO - AEE</div>
-    <p style="color: #888; margin: 5px 0;">Natal - Rio Grande do Norte | Rua Jaguaruana, 2310</p>
     
+    <!-- Endereço com Ícone de Localização e Link para o Google Maps -->
+    <div class="footer-address">
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Wiliam+Marinho+de+Leiros+-+Pajuçara,+Natal+-+RN,+59133-500" target="_blank">
+            <i class="fas fa-map-marker-alt" style="color: var(--cor-marca); margin-right: 6px;"></i>
+            Natal - Rio Grande do Norte | Rua Wiliam Marinho de Leiros - Pajuçara, Natal - RN, 59133-500
+        </a>
+    </div>
+
     <!-- Espaço reservado para o E-mail -->
     <div class="footer-contact">
         <i class="fas fa-envelope" style="color: var(--cor-marca); margin-right: 8px;"></i>
