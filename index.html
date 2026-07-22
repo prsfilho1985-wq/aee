@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEE - Associação Esportiva Expansivo | Futsal Feminino Natal/RN</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Biblioteca Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
         :root {
             --cor-fundo: #000000; /* Preto Oficial */
@@ -14,14 +17,25 @@
             --cor-cinza-texto: #cccccc;
         }
 
+        html {
+            scroll-behavior: smooth; /* Rolagem suave ao clicar nos links internos */
+        }
+
         body { font-family: 'Open Sans', sans-serif; margin: 0; color: var(--cor-texto-claro); background-color: var(--cor-fundo); }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
 
         /* Navegação */
         nav { background: var(--cor-fundo); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--cor-marca); position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.4rem; font-weight: 800; color: var(--cor-marca); }
+        
+        .nav-container { display: flex; align-items: center; gap: 20px; }
         .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--cor-marca); }
+
+        /* Estilo das Redes Sociais no Cabeçalho */
+        .social-links { display: flex; align-items: center; gap: 15px; margin-left: 10px; border-left: 1px solid #333; padding-left: 20px; }
+        .social-links a { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { color: var(--cor-marca); transform: translateY(-2px); }
 
         /* Hero Section */
         .hero { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1350&q=80'); 
@@ -32,7 +46,19 @@
         /* Seção Transparência (Foco do Auditor) */
         .transparencia { background: var(--cor-cinza-deep); padding: 80px 5%; text-align: center; }
         .docs-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-        .doc-item { padding: 30px; border: 2px solid var(--cor-marca); border-radius: 12px; width: 220px; transition: 0.4s; background: transparent; }
+        
+        /* Estilização dos Links dos Documentos */
+        .doc-item { 
+            padding: 30px; 
+            border: 2px solid var(--cor-marca); 
+            border-radius: 12px; 
+            width: 220px; 
+            transition: 0.4s; 
+            background: transparent; 
+            color: var(--cor-texto-claro); 
+            text-decoration: none; 
+            display: block; 
+        }
         .doc-item:hover { background: var(--cor-marca); color: var(--cor-fundo); transform: translateY(-5px); }
         .doc-item strong { font-size: 1.1rem; }
 
@@ -42,25 +68,55 @@
         .card-impacto h3 { color: var(--cor-marca); margin-bottom: 15px; }
         .card-impacto p { color: var(--cor-cinza-texto); line-height: 1.8; }
 
+        /* Seção de Patrocinadores e Parceiros */
+        .patrocinadores { background: var(--cor-cinza-deep); padding: 80px 5%; text-align: center; border-top: 1px solid #333; }
+        .sponsors-grid { display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
+        .sponsor-card { 
+            background: #000; 
+            border: 1px solid #333; 
+            border-radius: 12px; 
+            padding: 20px; 
+            width: 200px; 
+            height: 100px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            transition: 0.3s;
+        }
+        .sponsor-card:hover { border-color: var(--cor-marca); transform: translateY(-5px); }
+        .sponsor-card img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); transition: 0.3s; }
+        .sponsor-card:hover img { filter: grayscale(0%); }
+
         /* Botão Chamada para Ação */
         .btn { background: var(--cor-marca); color: var(--cor-fundo); padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .btn:hover { background: white; color: var(--cor-fundo); }
 
-        /* Rodapé Profissional */
+        /* Rodapé Profissional com Contato */
         footer { background: #000; padding: 50px 5%; text-align: center; border-top: 1px solid #333; }
-        .footer-info { color: var(--cor-marca); font-weight: bold; margin-bottom: 10px; }
-        .footer-legal { font-size: 0.8rem; color: #666; }
+        .footer-info { color: var(--cor-marca); font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
+        .footer-contact { margin: 15px 0; color: #ccc; }
+        .footer-contact a { color: var(--cor-marca); text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .footer-contact a:hover { text-decoration: underline; color: #fff; }
+        .footer-legal { font-size: 0.8rem; color: #666; margin-top: 20px; }
     </style>
 </head>
 <body>
 
 <nav>
     <div class="logo">AEE <span style="color:white">EXPANSIVO</span></div>
-    <div class="nav-links">
-        <a href="#sobre">A Associação</a>
-        <a href="#transparencia">Transparência</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="#sobre">A Associação</a>
+            <a href="#transparencia">Transparência</a>
+            <a href="#patrocinadores">Patrocinadores</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <!-- Ícones das Redes Sociais -->
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </div>
 </nav>
 
@@ -74,15 +130,18 @@
     <h2 style="color: var(--cor-marca)">Gestão e Compliance</h2>
     <p>Transparência total na aplicação de recursos públicos e privados. Auditado por especialistas.</p>
     <div class="docs-grid">
-        <div class="doc-item">
+        <!-- Documento 1 -->
+        <a href="https://seu-link-aqui.com/estatuto-social.pdf" target="_blank" class="doc-item">
             <strong>Estatuto Social</strong><br><small>Sede Rua Jaguaruana</small>
-        </div>
-        <div class="doc-item">
+        </a>
+        <!-- Documento 2 -->
+        <a href="https://seu-link-aqui.com/atas-oficiais.pdf" target="_blank" class="doc-item">
             <strong>Atas Oficiais</strong><br><small>Diretoria 2026</small>
-        </div>
-        <div class="doc-item">
+        </a>
+        <!-- Documento 3 -->
+        <a href="https://seu-link-aqui.com/regularidade-fiscal.pdf" target="_blank" class="doc-item">
             <strong>Regularidade Fiscal</strong><br><small>Certidões Negativas</small>
-        </div>
+        </a>
     </div>
 </section>
 
@@ -101,9 +160,34 @@
     </div>
 </section>
 
-<footer>
+<!-- Seção: Patrocinadores e Parceiros -->
+<section id="patrocinadores" class="patrocinadores">
+    <h2 style="color: var(--cor-marca)">Nossos Patrocinadores & Parceiros</h2>
+    <p>Empresas e instituições que acreditam e investem no futuro do futsal feminino.</p>
+    <div class="sponsors-grid">
+        <!-- Patrocinador 1 -->
+        <a href="https://link-do-patrocinador1.com" target="_blank" class="sponsor-card">
+            <img src="https://via.placeholder.com/180x60?text=Patrocinador+1" alt="Logo Patrocinador 1">
+        </a>
+        <!-- Patrocinador 2 -->
+        <a href="https://link-do-patrocinador2.com" target="_blank" class="sponsor-card">
+            <img src="https://via.placeholder.com/180x60?text=Patrocinador+2" alt="Logo Patrocinador 2">
+        </a>
+    </div>
+</section>
+
+<!-- Rodapé com o ID de Contato -->
+<footer id="contato">
     <div class="footer-info">ASSOCIAÇÃO ESPORTIVA EXPANSIVO - AEE</div>
-    <p style="color: #888">Natal - Rio Grande do Norte | Rua Jaguaruana, 2310</p>
+    <p style="color: #888; margin: 5px 0;">Natal - Rio Grande do Norte | Rua Jaguaruana, 2310</p>
+    
+    <!-- Espaço reservado para o E-mail -->
+    <div class="footer-contact">
+        <i class="fas fa-envelope" style="color: var(--cor-marca); margin-right: 8px;"></i>
+        <span>E-mail de Contato: </span>
+        <a href="mailto:contato@aeeexpansivo.com.br">contato@aeeexpansivo.com.br</a>
+    </div>
+
     <div class="footer-legal">
         &copy; 2026 | Gestão Fiscal e Contabilidade Especializada: Hub de Projetos Sociais.
     </div>
