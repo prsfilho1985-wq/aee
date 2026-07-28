@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AEE - Associação Esportiva Expansivo | Futsal Feminino Natal/RN</title>
+    <title>Nossa História | AEE - Associação Esportiva Expansivo</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Biblioteca Font Awesome para ícones -->
+    <!-- Font Awesome (Ícones para Redes Sociais) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
         :root {
             --cor-fundo: #000000; /* Preto Oficial */
@@ -17,18 +16,12 @@
             --cor-cinza-texto: #cccccc;
         }
 
-        html {
-            scroll-behavior: smooth; /* Rolagem suave ao clicar nos links internos */
-        }
-
         body { font-family: 'Open Sans', sans-serif; margin: 0; color: var(--cor-texto-claro); background-color: var(--cor-fundo); }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
 
         /* Navegação */
         nav { background: var(--cor-fundo); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--cor-marca); position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.4rem; font-weight: 800; color: var(--cor-marca); }
-        
-        .nav-container { display: flex; align-items: center; gap: 20px; }
         .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--cor-marca); }
 
@@ -37,167 +30,285 @@
         .social-links a { color: white; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
         .social-links a:hover { color: var(--cor-marca); transform: translateY(-2px); }
 
-        /* Hero Section */
-        .hero { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1350&q=80'); 
-                background-size: cover; background-position: center; height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; border-bottom: 5px solid var(--cor-marca); }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; color: var(--cor-marca); }
-        .hero p { font-size: 1.3rem; max-width: 800px; margin-bottom: 35px; color: white; }
 
-        /* Seção Transparência (Foco do Auditor) */
-        .transparencia { background: var(--cor-cinza-deep); padding: 80px 5%; text-align: center; }
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1350&q=80'); 
+                background-size: cover; background-position: center; height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; border-bottom: 5px solid var(--cor-marca); }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; color: var(--cor-marca); }
+        .hero p { font-size: 1.2rem; max-width: 850px; margin-bottom: 30px; color: white; line-height: 1.6; }
+
+        /* Seção História - Linha do Tempo Estilizada */
+        .historia-section { padding: 80px 5%; background: var(--cor-fundo); }
+        .historia-section h2 { color: var(--cor-marca); text-align: center; font-size: 2.2rem; margin-bottom: 10px; }
+        .historia-section .subtitle-center { text-align: center; color: var(--cor-cinza-texto); margin-bottom: 50px; }
+
+        .timeline { max-width: 900px; margin: 0 auto; border-left: 3px solid var(--cor-marca); padding-left: 30px; position: relative; }
+        .timeline-item { margin-bottom: 45px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -38px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--cor-marca); border: 3px solid var(--cor-fundo); }
+        .timeline-ano { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--cor-marca); margin-bottom: 5px; }
+        .timeline-titulo { font-size: 1.3rem; margin: 0 0 10px 0; color: white; }
+        .timeline-texto { color: var(--cor-cinza-texto); line-height: 1.8; margin: 0; }
+
+        /* Quote Destaque */
+        .quote-box { background: var(--cor-cinza-deep); border-left: 6px solid var(--cor-marca); padding: 30px; margin: 40px auto; max-width: 850px; border-radius: 0 12px 12px 0; }
+        .quote-box p { font-style: italic; font-size: 1.1rem; color: white; margin: 0; line-height: 1.7; }
+
+        /* Galeria de Fotos */
+        .galeria-section { padding: 80px 5%; background: var(--cor-cinza-deep); text-align: center; border-top: 1px solid #222; }
+        .galeria-section h2 { color: var(--cor-marca); font-size: 2.2rem; margin-bottom: 10px; }
+        .galeria-section p { color: var(--cor-cinza-texto); margin-bottom: 40px; }
+        .galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .galeria-item { position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #333; transition: 0.4s; background: #000; height: 230px; }
+        .galeria-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .galeria-item:hover { border-color: var(--cor-marca); transform: translateY(-5px); }
+        .galeria-item:hover img { transform: scale(1.08); }
+        .galeria-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 15px 10px 10px; color: white; font-size: 0.85rem; font-weight: 600; text-align: center; }
+
+        /* Cards de Impacto & Modelo de Atuação */
+        .impacto { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; background: var(--cor-fundo); }
+        .card-impacto { background: var(--cor-cinza-deep); padding: 35px; border-radius: 15px; border-top: 4px solid var(--cor-marca); }
+        .card-impacto h3 { color: var(--cor-marca); margin-bottom: 15px; font-size: 1.2rem; }
+        .card-impacto p { color: var(--cor-cinza-texto); line-height: 1.7; font-size: 0.95rem; margin: 0; }
+
+        /* Seção Transparência */
+        .transparencia { background: var(--cor-cinza-deep); padding: 80px 5%; text-align: center; border-top: 1px solid #222; }
         .docs-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-        
-        /* Estilização dos Links dos Documentos */
-        .doc-item { 
-            padding: 30px; 
-            border: 2px solid var(--cor-marca); 
-            border-radius: 12px; 
-            width: 220px; 
-            transition: 0.4s; 
-            background: transparent; 
-            color: var(--cor-texto-claro); 
-            text-decoration: none; 
-            display: block; 
-        }
+        .doc-item { padding: 25px; border: 2px solid var(--cor-marca); border-radius: 12px; width: 220px; transition: 0.4s; background: transparent; color: white; }
         .doc-item:hover { background: var(--cor-marca); color: var(--cor-fundo); transform: translateY(-5px); }
         .doc-item strong { font-size: 1.1rem; }
 
-        /* Metodologia e Missão */
-        .impacto { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; background: var(--cor-fundo); }
-        .card-impacto { background: var(--cor-cinza-deep); padding: 40px; border-radius: 15px; border-left: 6px solid var(--cor-marca); }
-        .card-impacto h3 { color: var(--cor-marca); margin-bottom: 15px; }
-        .card-impacto p { color: var(--cor-cinza-texto); line-height: 1.8; }
-
-        /* Seção de Patrocinadores e Parceiros */
-        .patrocinadores { background: var(--cor-cinza-deep); padding: 80px 5%; text-align: center; border-top: 1px solid #333; }
-        .sponsors-grid { display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-        .sponsor-card { 
-            background: #000; 
-            border: 1px solid #333; 
-            border-radius: 12px; 
-            padding: 20px; 
-            width: 200px; 
-            height: 100px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            transition: 0.3s;
-        }
-        .sponsor-card:hover { border-color: var(--cor-marca); transform: translateY(-5px); }
-        .sponsor-card img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); transition: 0.3s; }
-        .sponsor-card:hover img { filter: grayscale(0%); }
-
         /* Botão Chamada para Ação */
-        .btn { background: var(--cor-marca); color: var(--cor-fundo); padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn { background: var(--cor-marca); color: var(--cor-fundo); padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; display: inline-block; }
         .btn:hover { background: white; color: var(--cor-fundo); }
 
-        /* Rodapé Profissional com Contato */
+        /* Seção Patrocinadores */
+        .patrocinadores { padding: 60px 5%; background: #f4f4f4; text-align: center; }
+        .patrocinadores h2 { color: var(--cor-fundo); margin-bottom: 40px; }
+        .logos-container { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; }
+        .logos-container:hover { filter: grayscale(0%); opacity: 1; }
+        .logo-parceiro { max-width: 150px; height: auto; transition: transform 0.3s; }
+        .logo-parceiro:hover { transform: scale(1.1); }
+
+        /* Rodapé Profissional */
         footer { background: #000; padding: 50px 5%; text-align: center; border-top: 1px solid #333; }
-        .footer-info { color: var(--cor-marca); font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
-        .footer-address { margin: 10px 0; }
-        .footer-address a { color: #888; text-decoration: none; transition: 0.3s; }
-        .footer-address a:hover { color: var(--cor-marca); text-decoration: underline; }
-        .footer-contact { margin: 15px 0; color: #ccc; }
-        .footer-contact a { color: var(--cor-marca); text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .footer-contact a:hover { text-decoration: underline; color: #fff; }
-        .footer-legal { font-size: 0.8rem; color: #666; margin-top: 20px; }
+        .footer-info { color: var(--cor-marca); font-weight: bold; margin-bottom: 10px; }
+        .footer-legal { font-size: 0.8rem; color: #666; }
     </style>
 </head>
 <body>
 
 <nav>
     <div class="logo">AEE <span style="color:white">EXPANSIVO</span></div>
-    <div class="nav-container">
-        <div class="nav-links">
-            <a href="#sobre">A Associação</a>
-            <a href="#transparencia">Transparência</a>
-            <a href="#patrocinadores">Patrocinadores</a>
-            <a href="#contato">Contato</a>
-        </div>
+    <div class="nav-links">
+        <a href="#historia">Nossa História</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#frentes">Estrutura</a>
+        <a href="#transparencia">Transparência</a>
+        <a href="#patrocinadores">Parceiros</a>
+        <a href="#contato">Contato</a>
+    </div>
         <!-- Ícones das Redes Sociais -->
-        <div class="social-links">
-            <a href="https://www.instagram.com/expansivo_futsalfeminino?utm_source=qr&igsh=MWFlODBndnB2bHN1bQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@expansivotvfutsalfeminino5744?feature=shared" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-esportiva-expansivo/posts/?feedView=all" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+    <div class="social-links">
+        <a href="https://www.instagram.com/expansivo_futsalfeminino?utm_source=qr&igsh=MWFlODBndnB2bHN1bQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@expansivotvfutsalfeminino5744?feature=shared" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/associa%C3%A7%C3%A3o-esportiva-expansivo/posts/?feedView=all" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
-    <h1>EXPANSIVO FUTSAL FEMININO</h1>
-    <p>Excelência técnica, ética e compromisso social na formação de atletas em Natal/RN.</p>
-    <a href="#transparencia" class="btn">Portal de Governança</a>
+    <h1>NOSSA TRAJETÓRIA DE TRADIÇÃO E VITÓRIAS</h1>
+    <p>De uma peneira histórica em 2011 à consolidação como o projeto de futsal feminino mais vencedor e respeitado do Rio Grande do Norte.</p>
+    <a href="#historia" class="btn">Conheça Nossa História</a>
 </section>
 
+<!-- Linha do Tempo da História -->
+<section id="historia" class="historia-section">
+    <h2>A História da AEE Expansivo</h2>
+    <p class="subtitle-center">Como a união entre a paixão pelas quadras, a liderança técnica e o apoio institucional criou uma potência esportiva.</p>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-ano">2011</div>
+            <h3 class="timeline-titulo">A Peneira Surpresa e o Nascimento da Equipe</h3>
+            <p class="timeline-texto">
+                Tudo começou quando o professor e treinador de futsal masculino organizou uma seleção para formar o primeiro time feminino. A expectativa era modesta, mas a resposta foi histórica: <strong>quase 50 meninas compareceram ao ginásio</strong>. Enxergando o imenso potencial do grupo, a diretora <strong>Kátia Matias</strong> deu total apoio ao projeto desde o primeiro dia, abrindo as portas da instituição e unindo o esporte de alto rendimento à formação acadêmica.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-ano">2011 - 2015</div>
+            <h3 class="timeline-titulo">O Domínio Estadual e a Glória Nacional em Fortaleza</h3>
+            <p class="timeline-texto">
+                No mesmo ano de estreia, a equipe conquistou o título dos <strong>JUVERNs</strong> (garantindo vaga no Brasileiro Escolar em Curitiba/PR) e o vice-campeonato nos JERNs. A ascensão culminou em <strong>2015</strong>, nos Jogos Escolares da Juventude em Fortaleza/CE: uma campanha histórica encerrada com a <strong>Medalha de Ouro para o RN</strong> em uma goleada por 13 a 1 na final, colocando o futsal potiguar no topo do país.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-ano">Revelação de Talentos</div>
+            <h3 class="timeline-titulo">Da Quadra para os Gramados Nacionais</h3>
+            <p class="timeline-texto">
+                A metodologia de base da AEE tornou-se referência em raciocínio rápido e refinamento técnico. Além das conquistas no futsal, muitas atletas utilizaram o projeto como ponte para o futebol de campo — como o case da atleta <strong>Bárbara</strong>, formada na nossa base, com passagens por grandes clubes do Brasil e atualmente no Mirassol.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-ano">Hoje (AEE)</div>
+            <h3 class="timeline-titulo">Autonomia e a Busca Pela Liga Feminina de Futsal (LFF)</h3>
+            <p class="timeline-texto">
+                A história nascida no ginásio evoluiu para a criação da <strong>Associação Esportiva Expansivo (AEE)</strong>, uma entidade sem fins lucrativos 100% autônoma e independente. Com alcance digital superior a <strong>130 mil visualizações mensais</strong>, a AEE trabalha no fortalecimento da modalidade e projeta, a longo prazo, ingressar na <strong>Liga Feminina de Futsal (LFF)</strong> — a maior competição do futsal feminino nas Américas.
+            </p>
+        </div>
+    </div>
+
+    <div class="quote-box">
+        <p>"Em 2011 marcamos uma peneira achando que poucas meninas viriam. Apareceram quase 50. Ali soubemos que o futsal feminino do RN não era apenas um esporte, mas uma causa social e um sonho que precisava de espaço."</p>
+    </div>
+</section>
+
+<!-- Galeria de Fotos -->
+<section id="galeria" class="galeria-section">
+    <h2>Nossa Galeria de Momentos</h2>
+    <p>Registros históricos de treinos, conquistas estaduais, nacionais e a energia das nossas atletas em quadra.</p>
+    
+    <div class="galeria-grid">
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Mirim 2017.jpg" alt="JERNS 2017">
+            <div class="galeria-caption">Campeãs JERNS Mirim 2017</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Infantil 2017.jpg" alt="JERNS 2017">
+            <div class="galeria-caption">Campeãs JERNS Infantil 2017</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Juvenil 2017.jpg" alt="JERNS 2017">
+            <div class="galeria-caption">Campeãs JERNS Juvenil 2017</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Infantil 2018.jpg" alt="JERNS 2018">
+            <div class="galeria-caption">Campeãs JERNS Infantil 2018</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Juvenil 2018.jpg" alt="JERNS 2018">
+            <div class="galeria-caption">Campeãs JERNS Juvenil 2018</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Infantil 2019.jpg" alt="JERNS 2019">
+            <div class="galeria-caption">Campeãs JERNS Infantil 2019</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Juvenil 2019.jpg" alt="JERNS 2019">
+            <div class="galeria-caption">Campeãs JERNS Juvenil 2019</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão do JUVERNS Sub 14 - 2019.jpg" alt="JUVERNS 2019">
+            <div class="galeria-caption">Campeãs JUVERNS Sub 14 - 2019</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão do JUVERNS Sub 17 - 2019.jpg" alt="JUVERNS 2019">
+            <div class="galeria-caption">Campeãs JUVERNS Sub 17 - 2019 </div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/3º Lugar Serie Ouro JEBS 2021.jpg" alt="JEBS 2021">
+            <div class="galeria-caption">3º Lugar Serie ouro JEBS sub 17 - 2021</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Meninas do Sub 14  2021.jpg" alt="Meninas Sub 14">
+            <div class="galeria-caption">Time do Sub 14 de 2021</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Mirim 2023.jpg" alt="JERNS 2023">
+            <div class="galeria-caption">Campeãs JERNS Mirim 2023</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Infantil 2023.jpg" alt="JERNS 2023">
+            <div class="galeria-caption">Campeãs JERNS Infantil 2023</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Juvenil 2023.jpg" alt="JERNS 2023">
+            <div class="galeria-caption">Campeãs JERNS Juvenil 2023</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão do JUVERNS Sub 14 - 2023.jpg" alt="JUVERNS 2023">
+            <div class="galeria-caption">Campeãs JUVERNS Sub 14 - 2023 </div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão do JUVERNS Sul 17 - 2023.jpg" alt="JUVERNS 2023">
+            <div class="galeria-caption">Campeãs JUVERNS Sub 17 - 2023</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Mirim 2024.jpg" alt="JERNS 2024">
+            <div class="galeria-caption">Campeãs JERNS Mirim 2024</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Infantil 2024.jpg" alt="JERNS 2024">
+            <div class="galeria-caption">Campeãs JERNS Infantil 2024</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/Campeão JERNS Juvenil 2024.jpg" alt="JERNS 2023">
+            <div class="galeria-caption">Campeãs JERNS Juvenil 2024</div>
+        </div>
+        <div class="galeria-item">
+            <img src="img/7º colocado série Ouro JEBS 2025.jpg" alt="JERNS 2023">
+            <div class="galeria-caption">7º Lugar JEBS série Ouro</div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- Nossas 2 Frentes de Atuação -->
+<section id="frentes" class="impacto">
+    <div class="card-impacto">
+        <h3>1. Frente Escolar</h3>
+        <p>Nossas atletas representam com orgulho a tradição do Colégio Expansivo nas competições do desporto escolar (JERNS, JUVERNs e Jogos Brasileiros), mantendo a trajetória vitoriosa no circuito acadêmico.</p>
+    </div>
+    <div class="card-impacto">
+        <h3>2. Frente Associação</h3>
+        <p>As atletas da Associação (AEE) disputam campeonatos estaduais, copas regionais e torneios adultos federados durante todo o calendário do ano.</p>
+    </div>
+    <div class="card-impacto">
+        <h3>Formação Cidadã & ESG</h3>
+        <p>Promovemos o desenvolvimento humano, a liderança e a igualdade de gênero através do esporte, oferecendo um ambiente seguro e estruturado para jovens do RN.</p>
+    </div>
+</section>
+
+<!-- Seção Transparência -->
 <section id="transparencia" class="transparencia">
     <h2 style="color: var(--cor-marca)">Gestão e Compliance</h2>
-    <p>Transparência total na aplicação de recursos públicos e privados. Auditado por especialistas.</p>
+    <p style="color: var(--cor-cinza-texto)">Transparência total na aplicação de recursos públicos e privados. Auditado por especialistas.</p>
     <div class="docs-grid">
-        <!-- Documento 1 -->
-        <a href="https://seu-link-aqui.com/estatuto-social.pdf" target="_blank" class="doc-item">
-            <strong>Estatuto Social</strong><br><small>Sede Rua Jaguaruana</small>
+    <div class="doc-item">
+        <a href="https://1drv.ms/b/c/8f172c734750bcdf/IQCXmczovMLyTaHFDyxnzxWlAYu_ffiAzAAIIB4BkGorvIM?e=HwVgio" target="_blank" style="text-decoration: none; color: inherit;">
+        <strong>Estatuto Social</strong><br><small>Sede Rua Jaguaruana</small>
         </a>
-        <!-- Documento 2 -->
-        <a href="https://seu-link-aqui.com/atas-oficiais.pdf" target="_blank" class="doc-item">
+    </div>
+        <div class="doc-item">
+         <a href="https://1drv.ms/b/c/8f172c734750bcdf/IQAbCnHlBsDpQ6avmzl9ZqyrAbepFtQ9RwFsYPl2d5BVJTs?e=RMeM7E" target="_blank" style="text-decoration: none; color: inherit;">
             <strong>Atas Oficiais</strong><br><small>Diretoria 2026</small>
         </a>
-        <!-- Documento 3 -->
-        <a href="https://seu-link-aqui.com/regularidade-fiscal.pdf" target="_blank" class="doc-item">
+        </div>
+        <div class="doc-item">
             <strong>Regularidade Fiscal</strong><br><small>Certidões Negativas</small>
-        </a>
+        </div>
     </div>
 </section>
 
-<section id="sobre" class="impacto">
-    <div class="card-impacto">
-        <h3>Propósito Social</h3>
-        <p>Promover a igualdade de gênero através do futsal, garantindo às meninas de Natal um ambiente seguro para o desenvolvimento físico e cidadão.</p>
-    </div>
-    <div class="card-impacto">
-        <h3>Localização Estratégica</h3>
-        <p>Instalada no Bairro Pajuçara (Zona Norte), a AEE é o polo de referência para o desporto feminino na região.</p>
-    </div>
-    <div class="card-impacto">
-        <h3>Metodologia AEE</h3>
-        <p>Treinos estruturados com monitorização escolar. O desporto como trampolim para a educação formal e liderança.</p>
-    </div>
-</section>
-
-<!-- Seção: Patrocinadores e Parceiros -->
+<!-- Seção Patrocinadores -->
 <section id="patrocinadores" class="patrocinadores">
-    <h2 style="color: var(--cor-marca)">Nossos Patrocinadores & Parceiros</h2>
-    <p>Empresas e instituições que acreditam e investem no futuro do futsal feminino.</p>
-    <div class="sponsors-grid">
-        <!-- Patrocinador 1 -->
-        <a href="https://colegioexpansivo.com/" target="_blank" class="sponsor-card">
-            <img src="img/expansivo.jpeg" alt="Logo Patrocinador 1">
-        </a>
-        <!-- Patrocinador 2 -->
-        <a href="https://www.instagram.com/mjfitnatal/" target="_blank" class="sponsor-card">
-            <img src="img/mjfit.png" alt="Logo Patrocinador 2">
-        </a>
+    <h2>Nossos Patrocinadores e Parceiros</h2>
+    <div class="logos-container">
+        <a href="https://colegioexpansivo.com/" target="_blank" class="sponsor-card">"<img src="img/expansivo.jpeg" alt="Patrocinador 1" class="logo-parceiro"></a>
+        <a href="https://www.instagram.com/mjfitnatal/" target="_blank" class="sponsor-card"><img src="img/mjfit.png" alt="Patrocinador 2" class="logo-parceiro"></a>
     </div>
 </section>
 
-<!-- Rodapé com o ID de Contato e Link do Endereço -->
+<!-- Rodapé -->
 <footer id="contato">
     <div class="footer-info">ASSOCIAÇÃO ESPORTIVA EXPANSIVO - AEE</div>
-    
-    <!-- Endereço com Ícone de Localização e Link para o Google Maps -->
-    <div class="footer-address">
-        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Wiliam+Marinho+de+Leiros+-+Pajuçara,+Natal+-+RN,+59133-500" target="_blank">
-            <i class="fas fa-map-marker-alt" style="color: var(--cor-marca); margin-right: 6px;"></i>
-            Natal - Rio Grande do Norte | Rua Wiliam Marinho de Leiros - Pajuçara, Natal - RN, 59133-500
-        </a>
-    </div>
-
-    <!-- Espaço reservado para o E-mail -->
-    <div class="footer-contact">
-        <i class="fas fa-envelope" style="color: var(--cor-marca); margin-right: 8px;"></i>
-        <span>E-mail de Contato: </span>
-        <a href="mailto:contato@aeeexpansivo.com.br">contato@aeeexpansivo.com.br</a>
-    </div>
-
+    <p style="color: #888">CNPJ: 67.768.225/0001-63</p>
+    <p style="color: #888">Natal - Rio Grande do Norte | Rua Wiliam Marinho de Leiros - Pajuçara, Natal - RN, 59133-500</p>
+    <p style="color: #666; font-size: 0.85rem;">Contato: contato@aeexpansivo.org.br</p>
     <div class="footer-legal">
         &copy; 2026 | Gestão Fiscal e Contabilidade Especializada: Hub de Projetos Sociais.
     </div>
